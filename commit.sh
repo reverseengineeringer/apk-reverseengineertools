@@ -21,6 +21,13 @@ git commit  -m "$VERSIONINFO"
 echo to commit run:
 echo git push https://reverseengineeringer@github.com/reverseengineeringer/$PKGNAME
 
+read -p "Commit? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    git push https://reverseengineeringer@github.com/reverseengineeringer/$PKGNAME
+fi
+
 
 git config --global user.name $OLDUSERNAME
 git config --global user.email $OLDEMAIL
